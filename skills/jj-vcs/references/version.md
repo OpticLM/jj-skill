@@ -1,5 +1,8 @@
-Usage: jj version [OPTIONS]
+## Usage
 
-Options:
-  -h, --help
-          Print help (see a summary with '-h')
+jj version [OPTIONS]
+
+## Options
+
+* -h, --help
+  Print help (see a summary with '-h')

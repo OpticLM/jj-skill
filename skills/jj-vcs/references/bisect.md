@@ -1,8 +1,13 @@
-Usage: jj bisect [OPTIONS] <COMMAND>
+## Usage
 
-Commands:
-  run  Run a given command to find the first bad revision
+jj bisect [OPTIONS] <COMMAND>
 
-Options:
-  -h, --help
-          Print help (see a summary with '-h')
+## Commands
+
+* run
+  Run a given command to find the first bad revision
+
+## Options
+
+* -h, --help
+  Print help (see a summary with '-h')

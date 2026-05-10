@@ -25,18 +25,95 @@ def get_all_commands(root_help_text):
                 
     return commands
 
+def format_to_markdown(extracted_text):
+    lines = extracted_text.splitlines()
+    out =[]
+    
+    current_section = None
+    first_item_in_section = True
+    has_blank_line = False
+    last_was_desc = False
+    
+    for line in lines:
+        if not line.strip():
+            has_blank_line = True
+            continue
+            
+        if line.startswith('Usage: '):
+            out.extend(['## Usage', '', line[len('Usage: '):].strip()])
+            current_section = 'Usage'
+            has_blank_line = False
+            last_was_desc = False
+            continue
+            
+        match_header = re.match(r'^([A-Z][A-Za-z\s]+):$', line)
+        if match_header:
+            current_section = match_header.group(1)
+            out.extend(['', f'## {current_section}', ''])
+            first_item_in_section = True
+            has_blank_line = False
+            last_was_desc = False
+            continue
+            
+        if current_section and current_section != 'Usage':
+            leading_spaces = len(line) - len(line.lstrip())
+            
+            if 0 < leading_spaces <= 7:
+                if not first_item_in_section:
+                    out.append('')
+                
+                parts = re.split(r'\s{2,}', line.strip(), maxsplit=1)
+                
+                out.append(f'* {parts[0]}')
+                if len(parts) == 2:
+                    out.append(f'  {parts[1]}')
+                    last_was_desc = True
+                else:
+                    last_was_desc = False
+                
+                first_item_in_section = False
+                has_blank_line = False
+            
+            elif leading_spaces > 7:
+                stripped = line.strip()
+                if last_was_desc and not has_blank_line:
+                    out[-1] += f' {stripped}'
+                else:
+                    out.append(f'  {stripped}')
+                    last_was_desc = True
+                has_blank_line = False
+                
+            else:
+                if not first_item_in_section and has_blank_line:
+                    out.append('')
+                out.append(line.strip())
+                last_was_desc = False
+                has_blank_line = False
+        else:
+            if has_blank_line and out and out[-1] != '':
+                out.append('')
+            out.append(line.strip())
+            last_was_desc = False
+            has_blank_line = False
+            
+    while out and out[0] == '':
+        out.pop(0)
+        
+    return '\n'.join(out) + '\n'
+
 def process_and_save(cmd_name, output_text, out_dir):
     match = re.search(r'^(Usage:.*?(?=\nGlobal Options:|\Z))', output_text, re.MULTILINE | re.DOTALL)
     
     if match:
         extracted = match.group(1).strip()
         extracted = extracted.replace('jj.exe', 'jj')
-        extracted += '\n'
+        
+        markdown_content = format_to_markdown(extracted)
         
         out_path = os.path.join(out_dir, f"{cmd_name}.md")
         
         with open(out_path, 'w', encoding='utf-8', newline='\n') as f:
-            f.write(extracted)
+            f.write(markdown_content)
         
         print(f"✅ Generated: {out_path}")
     else:

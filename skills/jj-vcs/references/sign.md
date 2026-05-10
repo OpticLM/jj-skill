@@ -1,21 +1,18 @@
-Usage: jj sign [OPTIONS]
+## Usage
 
-Options:
-  -r, --revision <REVSETS>
-          What revision(s) to sign
-          
-          If no revisions are specified, this defaults to the `revsets.sign` setting.
-          
-          Note that revisions are always re-signed.
-          
-          While that leads to discomfort for users, which sign with hardware devices, as of now we
-          cannot reliably check if a commit is already signed by the user without creating a
-          signature (see [#5786]).
-          
-          [#5786]: https://github.com/jj-vcs/jj/issues/5786
+jj sign [OPTIONS]
 
-      --key <KEY>
-          The key used for signing
+## Options
 
-  -h, --help
-          Print help (see a summary with '-h')
+* -r, --revision <REVSETS>
+  What revision(s) to sign
+  If no revisions are specified, this defaults to the `revsets.sign` setting.
+  Note that revisions are always re-signed.
+  While that leads to discomfort for users, which sign with hardware devices, as of now we cannot reliably check if a commit is already signed by the user without creating a signature (see [#5786]).
+  [#5786]: https://github.com/jj-vcs/jj/issues/5786
+
+* --key <KEY>
+  The key used for signing
+
+* -h, --help
+  Print help (see a summary with '-h')

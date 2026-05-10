@@ -1,5 +1,8 @@
-Usage: jj root [OPTIONS]
+## Usage
 
-Options:
-  -h, --help
-          Print help (see a summary with '-h')
+jj root [OPTIONS]
+
+## Options
+
+* -h, --help
+  Print help (see a summary with '-h')

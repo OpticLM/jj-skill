@@ -1,82 +1,68 @@
-Usage: jj evolog [OPTIONS]
+## Usage
 
-Options:
-  -r, --revisions <REVSETS>
-          Follow changes from these revisions
-          
-          [default: @]
+jj evolog [OPTIONS]
 
-  -n, --limit <LIMIT>
-          Limit number of revisions to show
-          
-          Applied after revisions are reordered topologically, but before being reversed.
+## Options
 
-      --reversed
-          Show revisions in the opposite order (older revisions first)
+* -r, --revisions <REVSETS>
+  Follow changes from these revisions
+  [default: @]
 
-  -G, --no-graph
-          Don't show the graph, show a flat list of revisions
+* -n, --limit <LIMIT>
+  Limit number of revisions to show
+  Applied after revisions are reordered topologically, but before being reversed.
 
-  -T, --template <TEMPLATE>
-          Render each revision using the given template
-          
-          All 0-argument methods of the [`CommitEvolutionEntry` type] are available as keywords in
-          the template expression. See [`jj help -k templates`] for more information.
-          
-          If not specified, this defaults to the `templates.evolog` setting.
-          
-          [`CommitEvolutionEntry` type]:
-          https://docs.jj-vcs.dev/latest/templates/#commitevolutionentry-type
-          
-          [`jj help -k templates`]: https://docs.jj-vcs.dev/latest/templates/
+* --reversed
+  Show revisions in the opposite order (older revisions first)
 
-  -p, --patch
-          Show patch compared to the previous version of this change
-          
-          If the previous version has different parents, it will be temporarily rebased to the
-          parents of the new version, so the diff is not contaminated by unrelated changes.
+* -G, --no-graph
+  Don't show the graph, show a flat list of revisions
 
-  -h, --help
-          Print help (see a summary with '-h')
+* -T, --template <TEMPLATE>
+  Render each revision using the given template
+  All 0-argument methods of the [`CommitEvolutionEntry` type] are available as keywords in the template expression. See [`jj help -k templates`] for more information.
+  If not specified, this defaults to the `templates.evolog` setting.
+  [`CommitEvolutionEntry` type]: https://docs.jj-vcs.dev/latest/templates/#commitevolutionentry-type
+  [`jj help -k templates`]: https://docs.jj-vcs.dev/latest/templates/
 
-Diff Formatting Options:
-  -s, --summary
-          For each path, show only whether it was modified, added, or deleted
+* -p, --patch
+  Show patch compared to the previous version of this change
+  If the previous version has different parents, it will be temporarily rebased to the parents of the new version, so the diff is not contaminated by unrelated changes.
 
-      --stat
-          Show a histogram of the changes
+* -h, --help
+  Print help (see a summary with '-h')
 
-      --types
-          For each path, show only its type before and after
-          
-          The diff is shown as two letters. The first letter indicates the type before and the
-          second letter indicates the type after. '-' indicates that the path was not present, 'F'
-          represents a regular file, `L' represents a symlink, 'C' represents a conflict, and 'G'
-          represents a Git submodule.
+## Diff Formatting Options
 
-      --name-only
-          For each path, show only its path
-          
-          Typically useful for shell commands like: `jj diff -r @- --name-only | xargs perl -pi
-          -e's/OLD/NEW/g`
+* -s, --summary
+  For each path, show only whether it was modified, added, or deleted
 
-      --git
-          Show a Git-format diff
+* --stat
+  Show a histogram of the changes
 
-      --color-words
-          Show a word-level diff with changes indicated only by color
+* --types
+  For each path, show only its type before and after
+  The diff is shown as two letters. The first letter indicates the type before and the second letter indicates the type after. '-' indicates that the path was not present, 'F' represents a regular file, `L' represents a symlink, 'C' represents a conflict, and 'G' represents a Git submodule.
 
-      --tool <TOOL>
-          Generate diff by external command
-          
-          A builtin format can also be specified as `:<name>`. For example, `--tool=:git` is
-          equivalent to `--git`.
+* --name-only
+  For each path, show only its path
+  Typically useful for shell commands like: `jj diff -r @- --name-only | xargs perl -pi -e's/OLD/NEW/g`
 
-      --context <CONTEXT>
-          Number of lines of context to show
+* --git
+  Show a Git-format diff
 
-      --ignore-all-space
-          Ignore whitespace when comparing lines
+* --color-words
+  Show a word-level diff with changes indicated only by color
 
-      --ignore-space-change
-          Ignore changes in amount of whitespace when comparing lines
+* --tool <TOOL>
+  Generate diff by external command
+  A builtin format can also be specified as `:<name>`. For example, `--tool=:git` is equivalent to `--git`.
+
+* --context <CONTEXT>
+  Number of lines of context to show
+
+* --ignore-all-space
+  Ignore whitespace when comparing lines
+
+* --ignore-space-change
+  Ignore changes in amount of whitespace when comparing lines

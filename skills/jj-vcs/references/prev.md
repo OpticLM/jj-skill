@@ -1,26 +1,25 @@
-Usage: jj prev [OPTIONS] [OFFSET]
+## Usage
 
-Arguments:
-  [OFFSET]
-          How many revisions to move backward. Moves to the parent by default
-          
-          [default: 1]
+jj prev [OPTIONS] [OFFSET]
 
-Options:
-  -e, --edit
-          Edit the parent directly, instead of moving the working-copy commit
-          
-          Takes precedence over config in `ui.movement.edit`; i.e. will negate `ui.movement.edit =
-          false`
+## Arguments
 
-  -n, --no-edit
-          The inverse of `--edit`
-          
-          Takes precedence over config in `ui.movement.edit`; i.e. will negate `ui.movement.edit =
-          true`
+* [OFFSET]
+  How many revisions to move backward. Moves to the parent by default
+  [default: 1]
 
-      --conflict
-          Jump to the previous conflicted ancestor
+## Options
 
-  -h, --help
-          Print help (see a summary with '-h')
+* -e, --edit
+  Edit the parent directly, instead of moving the working-copy commit
+  Takes precedence over config in `ui.movement.edit`; i.e. will negate `ui.movement.edit = false`
+
+* -n, --no-edit
+  The inverse of `--edit`
+  Takes precedence over config in `ui.movement.edit`; i.e. will negate `ui.movement.edit = true`
+
+* --conflict
+  Jump to the previous conflicted ancestor
+
+* -h, --help
+  Print help (see a summary with '-h')

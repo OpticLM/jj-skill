@@ -1,9 +1,13 @@
-Usage: jj status [OPTIONS] [FILESETS]...
+## Usage
 
-Arguments:
-  [FILESETS]...
-          Restrict the status display to these paths
+jj status [OPTIONS] [FILESETS]...
 
-Options:
-  -h, --help
-          Print help (see a summary with '-h')
+## Arguments
+
+* [FILESETS]...
+  Restrict the status display to these paths
+
+## Options
+
+* -h, --help
+  Print help (see a summary with '-h')

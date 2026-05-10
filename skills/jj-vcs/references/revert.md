@@ -1,25 +1,23 @@
-Usage: jj revert [OPTIONS] --revision <REVSETS> <--onto <REVSETS>|--insert-after <REVSETS>|--insert-before <REVSETS>>
+## Usage
 
-Options:
-  -r, --revision <REVSETS>
-          The revision(s) to apply the reverse of
+jj revert [OPTIONS] --revision <REVSETS> <--onto <REVSETS>|--insert-after <REVSETS>|--insert-before <REVSETS>>
 
-  -o, --onto <REVSETS>
-          The revision(s) to apply the reverse changes on top of
-          
-          [aliases: -d, --destination]
+## Options
 
-  -A, --insert-after <REVSETS>
-          The revision(s) to insert the reverse changes after (can be repeated to create a merge
-          commit)
-          
-          [aliases: --after]
+* -r, --revision <REVSETS>
+  The revision(s) to apply the reverse of
 
-  -B, --insert-before <REVSETS>
-          The revision(s) to insert the reverse changes before (can be repeated to create a merge
-          commit)
-          
-          [aliases: --before]
+* -o, --onto <REVSETS>
+  The revision(s) to apply the reverse changes on top of
+  [aliases: -d, --destination]
 
-  -h, --help
-          Print help (see a summary with '-h')
+* -A, --insert-after <REVSETS>
+  The revision(s) to insert the reverse changes after (can be repeated to create a merge commit)
+  [aliases: --after]
+
+* -B, --insert-before <REVSETS>
+  The revision(s) to insert the reverse changes before (can be repeated to create a merge commit)
+  [aliases: --before]
+
+* -h, --help
+  Print help (see a summary with '-h')

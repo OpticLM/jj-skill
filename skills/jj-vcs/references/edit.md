@@ -1,9 +1,13 @@
-Usage: jj edit [OPTIONS] <REVSET|-r <REVSET>>
+## Usage
 
-Arguments:
-  [REVSET]
-          The commit to edit [aliases: -r]
+jj edit [OPTIONS] <REVSET|-r <REVSET>>
 
-Options:
-  -h, --help
-          Print help (see a summary with '-h')
+## Arguments
+
+* [REVSET]
+  The commit to edit [aliases: -r]
+
+## Options
+
+* -h, --help
+  Print help (see a summary with '-h')

@@ -1,5 +1,8 @@
-Usage: jj redo [OPTIONS]
+## Usage
 
-Options:
-  -h, --help
-          Print help (see a summary with '-h')
+jj redo [OPTIONS]
+
+## Options
+
+* -h, --help
+  Print help (see a summary with '-h')

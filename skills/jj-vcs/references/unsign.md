@@ -1,8 +1,11 @@
-Usage: jj unsign [OPTIONS]
+## Usage
 
-Options:
-  -r, --revision <REVSETS>
-          What revision(s) to unsign
+jj unsign [OPTIONS]
 
-  -h, --help
-          Print help (see a summary with '-h')
+## Options
+
+* -r, --revision <REVSETS>
+  What revision(s) to unsign
+
+* -h, --help
+  Print help (see a summary with '-h')

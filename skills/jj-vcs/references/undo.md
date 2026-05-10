@@ -1,5 +1,8 @@
-Usage: jj undo [OPTIONS]
+## Usage
 
-Options:
-  -h, --help
-          Print help (see a summary with '-h')
+jj undo [OPTIONS]
+
+## Options
+
+* -h, --help
+  Print help (see a summary with '-h')

@@ -1,88 +1,76 @@
-Usage: jj log [OPTIONS] [FILESETS]...
+## Usage
 
-Arguments:
-  [FILESETS]...
-          Show revisions modifying the given paths
+jj log [OPTIONS] [FILESETS]...
 
-Options:
-  -r, --revision <REVSETS>
-          Which revisions to show
-          
-          If no paths nor revisions are specified, this defaults to the `revsets.log` setting.
+## Arguments
 
-  -n, --limit <LIMIT>
-          Limit number of revisions to show
-          
-          Applied after revisions are filtered and reordered topologically, but before being
-          reversed.
+* [FILESETS]...
+  Show revisions modifying the given paths
 
-      --reversed
-          Show revisions in the opposite order (older revisions first)
+## Options
 
-  -G, --no-graph
-          Don't show the graph, show a flat list of revisions
+* -r, --revision <REVSETS>
+  Which revisions to show
+  If no paths nor revisions are specified, this defaults to the `revsets.log` setting.
 
-  -T, --template <TEMPLATE>
-          Render each revision using the given template
-          
-          Run `jj log -T` to list the built-in templates.
-          
-          You can also specify arbitrary template expressions using the [built-in keywords]. See
-          [`jj help -k templates`] for more information.
-          
-          If not specified, this defaults to the `templates.log` setting.
-          
-          [built-in keywords]: https://docs.jj-vcs.dev/latest/templates/#commit-keywords
-          
-          [`jj help -k templates`]: https://docs.jj-vcs.dev/latest/templates/
+* -n, --limit <LIMIT>
+  Limit number of revisions to show
+  Applied after revisions are filtered and reordered topologically, but before being reversed.
 
-  -p, --patch
-          Show patch
+* --reversed
+  Show revisions in the opposite order (older revisions first)
 
-      --count
-          Print the number of commits instead of showing them
+* -G, --no-graph
+  Don't show the graph, show a flat list of revisions
 
-  -h, --help
-          Print help (see a summary with '-h')
+* -T, --template <TEMPLATE>
+  Render each revision using the given template
+  Run `jj log -T` to list the built-in templates.
+  You can also specify arbitrary template expressions using the [built-in keywords]. See [`jj help -k templates`] for more information.
+  If not specified, this defaults to the `templates.log` setting.
+  [built-in keywords]: https://docs.jj-vcs.dev/latest/templates/#commit-keywords
+  [`jj help -k templates`]: https://docs.jj-vcs.dev/latest/templates/
 
-Diff Formatting Options:
-  -s, --summary
-          For each path, show only whether it was modified, added, or deleted
+* -p, --patch
+  Show patch
 
-      --stat
-          Show a histogram of the changes
+* --count
+  Print the number of commits instead of showing them
 
-      --types
-          For each path, show only its type before and after
-          
-          The diff is shown as two letters. The first letter indicates the type before and the
-          second letter indicates the type after. '-' indicates that the path was not present, 'F'
-          represents a regular file, `L' represents a symlink, 'C' represents a conflict, and 'G'
-          represents a Git submodule.
+* -h, --help
+  Print help (see a summary with '-h')
 
-      --name-only
-          For each path, show only its path
-          
-          Typically useful for shell commands like: `jj diff -r @- --name-only | xargs perl -pi
-          -e's/OLD/NEW/g`
+## Diff Formatting Options
 
-      --git
-          Show a Git-format diff
+* -s, --summary
+  For each path, show only whether it was modified, added, or deleted
 
-      --color-words
-          Show a word-level diff with changes indicated only by color
+* --stat
+  Show a histogram of the changes
 
-      --tool <TOOL>
-          Generate diff by external command
-          
-          A builtin format can also be specified as `:<name>`. For example, `--tool=:git` is
-          equivalent to `--git`.
+* --types
+  For each path, show only its type before and after
+  The diff is shown as two letters. The first letter indicates the type before and the second letter indicates the type after. '-' indicates that the path was not present, 'F' represents a regular file, `L' represents a symlink, 'C' represents a conflict, and 'G' represents a Git submodule.
 
-      --context <CONTEXT>
-          Number of lines of context to show
+* --name-only
+  For each path, show only its path
+  Typically useful for shell commands like: `jj diff -r @- --name-only | xargs perl -pi -e's/OLD/NEW/g`
 
-      --ignore-all-space
-          Ignore whitespace when comparing lines
+* --git
+  Show a Git-format diff
 
-      --ignore-space-change
-          Ignore changes in amount of whitespace when comparing lines
+* --color-words
+  Show a word-level diff with changes indicated only by color
+
+* --tool <TOOL>
+  Generate diff by external command
+  A builtin format can also be specified as `:<name>`. For example, `--tool=:git` is equivalent to `--git`.
+
+* --context <CONTEXT>
+  Number of lines of context to show
+
+* --ignore-all-space
+  Ignore whitespace when comparing lines
+
+* --ignore-space-change
+  Ignore changes in amount of whitespace when comparing lines

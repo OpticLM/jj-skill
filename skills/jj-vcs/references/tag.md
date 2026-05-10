@@ -1,10 +1,19 @@
-Usage: jj tag [OPTIONS] <COMMAND>
+## Usage
 
-Commands:
-  delete  Delete existing tags [aliases: d]
-  list    List tags and their targets [aliases: l]
-  set     Create or update tags [aliases: s]
+jj tag [OPTIONS] <COMMAND>
 
-Options:
-  -h, --help
-          Print help (see a summary with '-h')
+## Commands
+
+* delete
+  Delete existing tags [aliases: d]
+
+* list
+  List tags and their targets [aliases: l]
+
+* set
+  Create or update tags [aliases: s]
+
+## Options
+
+* -h, --help
+  Print help (see a summary with '-h')

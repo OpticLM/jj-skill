@@ -5,7 +5,7 @@ allowed-tools: Bash(jj:*)
 license: MIT
 metadata:
   author: OpticLM
-  version: "0.41.0.0"
+  version: "0.41.0.1"
 ---
 
 ## Core concepts

@@ -1,24 +1,26 @@
-Usage: jj commit [OPTIONS] [FILESETS]...
+## Usage
 
-Arguments:
-  [FILESETS]...
-          Put these paths in the current commit
+jj commit [OPTIONS] [FILESETS]...
 
-Options:
-  -i, --interactive
-          Interactively choose which changes to include in the current commit
+## Arguments
 
-      --tool <NAME>
-          Specify diff editor to be used (implies --interactive)
+* [FILESETS]...
+  Put these paths in the current commit
 
-  -m, --message <MESSAGE>
-          The change description to use (don't open editor)
+## Options
 
-      --editor
-          Open an editor to edit the change description
-          
-          Forces an editor to open when using `--message` to allow the message to be edited
-          afterwards.
+* -i, --interactive
+  Interactively choose which changes to include in the current commit
 
-  -h, --help
-          Print help (see a summary with '-h')
+* --tool <NAME>
+  Specify diff editor to be used (implies --interactive)
+
+* -m, --message <MESSAGE>
+  The change description to use (don't open editor)
+
+* --editor
+  Open an editor to edit the change description
+  Forces an editor to open when using `--message` to allow the message to be edited afterwards.
+
+* -h, --help
+  Print help (see a summary with '-h')

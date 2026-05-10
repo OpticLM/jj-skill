@@ -1,8 +1,13 @@
-Usage: jj gerrit [OPTIONS] <COMMAND>
+## Usage
 
-Commands:
-  upload  Upload changes to Gerrit for code review, or update existing changes
+jj gerrit [OPTIONS] <COMMAND>
 
-Options:
-  -h, --help
-          Print help (see a summary with '-h')
+## Commands
+
+* upload
+  Upload changes to Gerrit for code review, or update existing changes
+
+## Options
+
+* -h, --help
+  Print help (see a summary with '-h')
